@@ -52,11 +52,10 @@ namespace ConsoleApp3
             Product p4 = new Product(88, "Drums", 2160, 83);
             Product p5 = new Product(99, "Flute", 580, 9);
 
-            p1.DisplayProduct();
-            p2.DisplayProduct();
-            p3.DisplayProduct();
-            p4.DisplayProduct();
-            p5.DisplayProduct();
+            Product [] products = new Product [] { p1, p2, p3, p4, p5 };
+            
+            int[] cartQty = cartPrice = new int[5];
+            
 
 
             Console.WriteLine("Enter your Product: ");
@@ -71,15 +70,15 @@ namespace ConsoleApp3
             if (!int.TryParse(Idinput, out int id))
             {
                 Console.WriteLine("Invalid! You must type numeric ID!");
+                continue;
             }
-            else if (id != 12 && && id != 45 && id != 67 && id != 88 && id != 99)
+            if (id != 12 && && id != 45 && id != 67 && id != 88 && id != 99)
             {
                 Console.WriteLine("Product ID is not found!");
+                continue;
+                
             }
-            else
-            {
-                Console.WriteLine("PROCEED");
-            }
+            
 
         }
     }
