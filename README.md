@@ -1,3 +1,5 @@
+# Description
+
 This is a console-based Shopping Cart System in C# using classes, objects, and an array of objects. That allows users to select products and manage a shopping cart.
 
 It features:
@@ -11,6 +13,16 @@ It features:
 • Updated stock after checkout
 
 
-AI Usage In This Project
+# AI Usage In This Project
 
+I used different types of AI such as Gemini AI, chatGPT, and claude AI as a collaborative coding partner. These AI's helped me in building and fixing this project, they also assisted me by explaining some part i do not understand. 
 
+These are the prompts/questions I asked:
+- How do i use int.TryParse() to validate quantity in C# and what is the purpose of it?
+- What is the problem in my code? *share my code*
+- How do I display remaining stock after the loop ended?
+- Okayy .. so i have a code and I don't know why the outcome keeps on looping after I put 5 items in cart. Isn't that supposed to break?
+- What is the purpose of a cart in a store program and how does it work?
+- Can you guide me on how to code it? Don't give me the code directly.. like give me an example so I don't have to rely on you too much.
+- Why is my ID loop not breaking or stopping?
+- Do you think my code is messy? Can you help me clean my code? 
