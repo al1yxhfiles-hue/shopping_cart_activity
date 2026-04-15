@@ -1,4 +1,4 @@
-# Description
+Description
 
 This is a console-based Shopping Cart System in C# using classes, objects, and an array of objects. That allows users to select products and manage a shopping cart.
 
@@ -13,9 +13,13 @@ It features:
 • Updated stock after checkout
 
 
-# AI Usage In This Project
+AI Usage In This Project
 
-I used different types of AI such as Gemini AI, chatGPT, and claude AI as a collaborative coding partner. These AI's helped me in building and fixing this project, they also assisted me by explaining some part i do not understand. 
+I used different types of AI such as Gemini AI, chatGPT, and claude AI as a collaborative coding partner. 
+These AI's helped me in building and fixing this project, they also assisted me by explaining some part i do not understand. Further, AI was used to ensure that my program can handled user errors effectively. 
+
+Why AI was used?
+I used AI to address bugs that were difficult for me to solve. Like for example, the program did not exit a loop after i entered too much item in a cart. I also used AI to understand the purpose of other functions and how to use it properly.
 
 These are the prompts/questions I asked:
 - How do i use int.TryParse() to validate quantity in C# and what is the purpose of it?
@@ -26,3 +30,5 @@ These are the prompts/questions I asked:
 - Can you guide me on how to code it? Don't give me the code directly.. like give me an example so I don't have to rely on you too much.
 - Why is my ID loop not breaking or stopping?
 - Do you think my code is messy? Can you help me clean my code? 
+
+The AI helped me in several areas of the project, including debugging broken loops, defining shopping carat structure, and guide me how to code.
