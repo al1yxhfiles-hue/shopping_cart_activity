@@ -1,1 +1,1 @@
-# Lopez_Aliyah_ShoppingCartActivity
+AI USAGE
