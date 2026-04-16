@@ -182,28 +182,7 @@ internal class Program
             }
         }
 
-        Console.WriteLine();
-        Console.WriteLine("===== Here is your Receipt =====");
-        Console.WriteLine("\nYour Cart:");
-        double total = 0;
-        for (int i = 0; i < cartCount; i++)
-        {
-            Console.WriteLine($"{cartItems[i]} - Qty: {cartQty[i]} - Price: ${cartPrice[i]:0.00}");
-            total += cartPrice[i];
-        }
-        Console.WriteLine($"\nTotal: ${total:0.00}");
-        Console.WriteLine("Thank you for shopping with us!");
-        Console.ReadKey();
-
-        if (total >= 5000)
-        {
-            double discount = total * 0.10;
-            double finalTotal = total - discount;
-
-            Console.WriteLine($"Grand Total: ${total:0.00}");
-            Console.WriteLine($"Discount (10%): ${discount:0.00}");
-            Console.WriteLine($"Final Total: ${finalTotal:0.00}");
-        }
+        
         else
         {
             Console.WriteLine($"Total: ${total:0.00}");
