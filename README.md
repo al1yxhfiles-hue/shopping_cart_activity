@@ -11,6 +11,3 @@ It features:
 • Discount amount 
 • Final Total
 • Updated stock after checkout
-
-
-
