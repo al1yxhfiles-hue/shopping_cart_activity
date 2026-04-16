@@ -182,7 +182,8 @@ internal class Program
             }
         }
 
-
+        Console.WriteLine();
+        Console.WriteLine("===== Here is your Receipt =====");
         Console.WriteLine("\nYour Cart:");
         double total = 0;
         for (int i = 0; i < cartCount; i++)
