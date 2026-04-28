@@ -38,6 +38,11 @@ namespace ConsoleApp3
         {
             return RemainingStock >= quantity;
         }
+
+        public void DeductStock(int quantity)
+        {
+            RemainingStock -= quantity;
+        }
     }
 }
 
@@ -60,12 +65,11 @@ internal class Program
         Product p4 = new Product(88, "Drums", 2160, 83);
         Product p5 = new Product(99, "Flute", 580, 9);
 
+        
         Product[] products = new Product[] { p1, p2, p3, p4, p5 };
-
-        string[] cartItems = new string[3];
-        int[] cartQty = new int[3];
-        double[] cartPrice = new double[3];
+        CartItem[] cart = new CartItem [3];
         int cartCount = 0;
+
             
             bool isShopping = true;
             while (isShopping)
