@@ -70,21 +70,15 @@ internal class CartItem
 
 # MAIN
 using ConsoleApp3;
-using Microsoft.VisualBasic;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
 
-internal class Program
-{
-    private static void Main(string[] args)
-    {
-        Product selectedProduct = null;
+Product selectedProduct = null;
 
-               Product p1 = new Product(12, "Guitar", 960, 38);
-        Product p2 = new Product(45, "Ukulele", 660, 12);
-        Product p3 = new Product(67, "Piano", 1120, 24);
-        Product p4 = new Product(88, "Drums", 2160, 83);
-        Product p5 = new Product(99, "Flute", 580, 9);
+Product p1 = new Product(12, "String Instruments", "Guitar", 960, 38);
+Product p2 = new Product(45, "String Instruments", "Ukulele", 660, 12);
+Product p3 = new Product(67, "Keyboard Instruments", "Piano", 1120, 24);
+Product p4 = new Product(88, "Percussion Instruments", "Drums", 2160, 83);
+Product p5 = new Product(99, "Wind Instruments", "Flute", 580, 9);
+
 
         Product[] products = new Product[] { p1, p2, p3, p4, p5 };
         CartItem[] cart = new CartItem[3];
