@@ -98,19 +98,14 @@ while (isShopping)
     string choice = Console.ReadLine();
 
     switch (choice)
-
-                Console.WriteLine("Invalid Product ID! Please enter a positive number.");
-                Console.ReadKey(); continue;
-            }
-
-            selectedProduct = null;
+    {
+        case "1":
+            Console.WriteLine("========== Available Products: ==========\n");
             foreach (Product product in products)
-            {
-                if (product.Id == id) { selectedProduct = product; break; }
-            }
+                product.DisplayProduct();
+            Console.ReadKey(); continue;
 
-            if (selectedProduct == null)
-            {
+            
                 Console.WriteLine("Product ID is not found!");
                 Console.ReadKey(); continue;
             }
