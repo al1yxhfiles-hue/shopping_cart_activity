@@ -85,22 +85,20 @@ Product p5 = new Product(99, "Wind Instruments", "Flute", 580, 9);
         int cartCount = 0;
 
         bool isShopping = true;
-        while (isShopping)
-        {
-            Console.Clear();
-            Console.WriteLine("========== Available Products: ==========\n");
-            foreach (Product product in products)
-                product.DisplayProduct();
+while (isShopping)
+{
+    Console.Clear();
+    Console.WriteLine("========== MAIN MENU ==========");
+    Console.WriteLine("[1] Browse Products");
+    Console.WriteLine("[2] Search by Name");
+    Console.WriteLine("[3] Filter by Category");
+    Console.WriteLine("[4] Cart Menu");
+    Console.WriteLine("[5] Exit");
+    Console.Write("Choose: ");
+    string choice = Console.ReadLine();
 
-            Console.WriteLine("\nEnter ProductId: ");
-            string idInput = Console.ReadLine();
-            if (!int.TryParse(idInput, out int id))
-            {
-                Console.WriteLine("Invalid! You must type numeric ID!");
-                Console.ReadKey(); continue;
-            }
-            if (id <= 0)
-            {
+    switch (choice)
+
                 Console.WriteLine("Invalid Product ID! Please enter a positive number.");
                 Console.ReadKey(); continue;
             }
