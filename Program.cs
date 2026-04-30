@@ -12,18 +12,21 @@ namespace ConsoleApp3
         public string Name;
         public double Price;
         public int RemainingStock;
+        public string Category;
 
-        public Product(int id, string name, double price, int remainingStock)
+         public Product(int id, string category, string name, double price, int remainingStock)
         {
             Id = id;
             Name = name;
             Price = price;
             RemainingStock = remainingStock;
+            Category = category;
         }
 
         public void DisplayProduct()
         {
             Console.WriteLine("Name             : " + Name);
+            Console.WriteLine("Category         : " + Category);
             Console.WriteLine("Id               : " + Id);
             Console.WriteLine("Price            : " + Price);
             Console.WriteLine("Remaining Stock  : " + RemainingStock);
