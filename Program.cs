@@ -123,96 +123,26 @@ while (isShopping)
                 Console.WriteLine("Product not found!");
             }
             Console.ReadKey();
-    break;
-                Console.WriteLine("Invalid! You must type numeric Quantity!");
-                Console.ReadKey(); continue;
-            }
-            if (qty <= 0)
-            {
-                Console.WriteLine("Invalid quantity. Please enter a positive number.");
-                Console.ReadKey(); continue;
-            }
-            if (!selectedProduct.HasEnoughStock(qty))
-            {
-                Console.WriteLine($"Sorry, only {selectedProduct.RemainingStock} {selectedProduct.Name}(s) left in stock.");
-                Console.ReadKey(); continue;
-            }
+            break;
+        case "3":
+            Console.WriteLine("\nFilter by category");
+            string categoryInput = Console.ReadLine();
 
-            
-            int existingIndex = -1;
-            for (int i = 0; i < cartCount; i++)
+            bool foundCategory = false;
+            foreach (Product product in products)
             {
-                if (cart[i].Name == selectedProduct.Name)
+                if (product.Category.Equals(categoryInput, StringComparison.CurrentCultureIgnoreCase))
                 {
-                    existingIndex = i; break;
+                    product.DisplayProduct();
+                    foundCategory = true;
                 }
             }
-
-            if (existingIndex >= 0)
+            if (!foundCategory)
             {
-               
-                cart[existingIndex].Quantity += qty;
-                cart[existingIndex].TotalPrice += selectedProduct.GetItemTotal(qty);
-                Console.WriteLine($"Updated {selectedProduct.Name} in cart! New qty: {cart[existingIndex].Quantity}");
+                Console.WriteLine("No products found in this category!");
+                Console.ReadKey(); continue;
             }
-            else
-            {
-                if (cartCount >= 3)
-                {
-                    Console.WriteLine("Cart is full! Cannot add more items.");
-                    Console.ReadKey(); continue;
-                }
-                
-                cart[cartCount] = new CartItem(
-                    selectedProduct.Name,
-                    qty,
-                    selectedProduct.GetItemTotal(qty)  
-                );
-                cartCount++;
-                Console.WriteLine($"Added {qty} {selectedProduct.Name}(s) to cart!");
-            }
-
-           
-            selectedProduct.DeductStock(qty);
-
-            Console.WriteLine("\nDo you want to continue shopping? (Y/N)");
-            string cont = Console.ReadLine();
-            if (!cont.Equals("Y", StringComparison.CurrentCultureIgnoreCase)) isShopping = false;
-        }
+            Console.ReadKey(); continue;
 
         
-        Console.WriteLine("\n===== Here is your Receipt =====\n");
-        double total = 0;
-        for (int i = 0; i < cartCount; i++)
-        {
-            Console.WriteLine($"{cart[i].Name} - Qty: {cart[i].Quantity} - Price: ${cart[i].TotalPrice:0.00}");
-            total += cart[i].TotalPrice;
-        }
-
-        Console.WriteLine($"\nTotal: ${total:0.00}");
-        Console.ReadKey();
-
-        if (total >= 5000)
-        {
-            double discount = total * 0.10;
-            double finalTotal = total - discount;
-            Console.WriteLine($"Grand Total: ${total:0.00}");
-            Console.WriteLine($"Discount (10%): ${discount:0.00}");
-            Console.WriteLine($"Final Total: ${finalTotal:0.00}");
-        }
-        else
-        {
-            Console.WriteLine($"Total: ${total:0.00}");
-        }
-
-        Console.WriteLine("\nUpdated Product Stock:");
-        foreach (Product product in products)
-        {
-            string stockStatus = product.RemainingStock == 0 ? "OUT OF STOCK" : $"{product.RemainingStock} left";
-            Console.WriteLine($"{product.Name,-10} : {stockStatus}");
-        }
-
-        Console.WriteLine("Thank you for purchasing in our store!");
-    }
-}
 
